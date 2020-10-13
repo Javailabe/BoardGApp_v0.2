@@ -1,9 +1,14 @@
-import dataProcessing.*;
+import dataProcessing.DeleteData;
+import database.Games;
+import database.Users;
+
+import dataProcessing.AddData;
+import dataProcessing.ShowData;
+import dataProcessing.DeleteData.*;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import dataProcessing.*;
-import DBconnections.*;
+
 
 public class BoardGApp {
 
@@ -40,10 +45,10 @@ public class BoardGApp {
             System.out.println("        Wybierz (2) - Dodaj gre");
             System.out.println("        Wybierz (3) - Pokaz liste uzytkownikow");
             System.out.println("        Wybierz (4) - Pokaz liste gier");
-            System.out.println("        Wybierz (5) - Usun gre");
-            System.out.println("        Wybierz (6) - Usun uzytkownika");
-            System.out.println("        Wybierz (7) - Dodaj wypozyczenie");
-            System.out.println("        Wybierz (8) - Pokaz wypozyczenie");
+            System.out.println("        Wybierz (5) - Usun uzytkownika");
+            System.out.println("        Wybierz (6) - Usun gre");
+            System.out.println("        Wybierz (7) - Dodaj wypozyczenie (jeszcze nie dziala)");
+            System.out.println("        Wybierz (8) - Pokaz wypozyczenie (jeszcze nie dziala)");
             System.out.println("        Wybierz (0) - Zakoncz program");
             System.out.println();
         }
@@ -73,18 +78,22 @@ public class BoardGApp {
                     System.out.println();
                     break;
                 case 1:
-                    //akcja 1
+                    AddData.addnewintent("user");
                     break;
                 case 2:
-                    //akcja 2
+                    AddData.addnewintent("game");
                     break;
                 case 3:
-                    showData.setShow(dbConn.getUsersDB());
-                    showData.getShowFromDB();
+                    ShowData.showFromDB(Users.getDbname());
                     break;
                 case 4:
-                    showData.setShow(dbConn.getGamesDB());
-                    showData.getShowFromDB();
+                    ShowData.showFromDB(Games.getDbname());
+                    break;
+                case 5:
+                    DeleteData.deleteintent("user");
+                    break;
+                case 6:
+                    DeleteData.deleteintent("game");
                     break;
             }
         }
