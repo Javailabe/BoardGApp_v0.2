@@ -1,3 +1,4 @@
+import dataProcessing.Borrows;
 import dataProcessing.DeleteData;
 import database.Games;
 import database.Users;
@@ -47,8 +48,8 @@ public class BoardGApp {
             System.out.println("        Wybierz (4) - Pokaz liste gier");
             System.out.println("        Wybierz (5) - Usun uzytkownika");
             System.out.println("        Wybierz (6) - Usun gre");
-            System.out.println("        Wybierz (7) - Dodaj wypozyczenie (jeszcze nie dziala)");
-            System.out.println("        Wybierz (8) - Pokaz wypozyczenie (jeszcze nie dziala)");
+            System.out.println("        Wybierz (7) - Dodaj wypozyczenie (prawie dziala)");
+            System.out.println("        Wybierz (8) - Pokaz wypozyczenie");
             System.out.println("        Wybierz (0) - Zakoncz program");
             System.out.println();
         }
@@ -58,7 +59,7 @@ public class BoardGApp {
             int input = -1;
             Scanner keyboardInput = new Scanner(System.in);
 
-            while (input < 0 || input > 7) {
+            while (input < 0 || input > 9) {
                 try {
                     System.out.print("Wybieram: ");
                     input = Integer.parseInt(keyboardInput.nextLine());
@@ -95,6 +96,10 @@ public class BoardGApp {
                 case 6:
                     DeleteData.deleteintent("game");
                     break;
+                case 7:
+                    Borrows.checking();
+                case 8:
+                    ShowData.showFromDB(Borrows.getDbname());
             }
         }
     }

@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class DeleteData {
 
-    private static final String deletfrom = "DELETE FROM ";
+    private static final String deletefrom = "DELETE FROM ";
     private static final String whereName = " WHERE Name = ";
     private static final String andSurname = " AND Surname = ";
 
@@ -49,7 +49,7 @@ public class DeleteData {
     private static void sqldeletequerry(String intent) {
 
         if (intent == "user") {
-            String userdeletestmt = deletfrom + Users.getDbname() +
+            String userdeletestmt = deletefrom + Users.getDbname() +
                                     whereName + Users.getUserName() + andSurname + Users.getUserSurname();
 
             try {
@@ -68,7 +68,7 @@ public class DeleteData {
             }
         }
         else if (intent == "game") {
-            String gamedeletestmt = deletfrom + Games.getDbname() + whereName + Games.getName();
+            String gamedeletestmt = deletefrom + Games.getDbname() + whereName + Games.getName();
 
             try {
                 Connection connectionData = DriverManager.getConnection(AdminClass.getDbUrl(),

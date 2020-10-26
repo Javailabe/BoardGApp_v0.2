@@ -7,7 +7,7 @@ public class Users {
 
     //private static final String sqlcolUserName = "['Name']";
     //private static final String sqlcolUserSurname = "['Surname']";
-   //private static final String sqlcolUserEmail = "['e-mail']";
+    //private static final String sqlcolUserEmail = "['e-mail']";
 
     private static String userName, userSurname, email;
 

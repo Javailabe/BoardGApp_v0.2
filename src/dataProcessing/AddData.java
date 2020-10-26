@@ -13,7 +13,6 @@ public class AddData {
         Scanner scanner = new Scanner(System.in);
 
         if (intent == "user") {
-            //Users newuser = new Users();  //czy to jest potrzebne?
 
             System.out.print("Podaj imie: ");
             String name = scanner.nextLine();
@@ -31,7 +30,6 @@ public class AddData {
             System.out.println("Wpis dodany pomyslnie!");
         }
         else if (intent == "game") {
-            //Games newgame = new Games();  //czy to jest potrzebne?
 
             System.out.print("Podaj nazwe: ");
             String subname = scanner.nextLine();
